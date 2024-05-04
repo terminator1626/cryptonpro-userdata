@@ -33,7 +33,7 @@ async function data(user_id, key) {
     }
 }
 ```
--
+
 ## Discord Key
 
 To use this package, an API key is required. To obtain the key, please contact our Discord server [here](https://discord.gg/WN7ggJRKHy).
