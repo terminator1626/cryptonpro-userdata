@@ -12,6 +12,7 @@ npm install cryptonpro-userdata@latest
 
 ## Usage
 
+- User data:
 ```javascript
 const { User } = require("cryptonpro-userdata");
 
@@ -30,6 +31,24 @@ async function data(user_id, key) {
         console.log(details.balance_bitcoin);
     } else {
         console.log('User not found.');
+    }
+}
+```
+- Generate deposit:
+```javascript
+const { Deposit } = require("cryptonpro-userdata");
+
+deposit_create("USER_ID", "AMOUNT", "API_KEY");
+
+async function deposit_create(user_id, amount, token) {
+    const deposit = new Deposit(user_id, amount, token);
+    const depositDATA = await deposit.create();
+    if (detailsDATA) {
+        const details = detailsDATA;
+        console.log(details);
+        console.log(details.message); // Link to FaucetPay payment gateway
+    } else {
+        console.log('Problem with API');
     }
 }
 ```
