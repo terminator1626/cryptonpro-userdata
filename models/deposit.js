@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 class Deposit {
-    constructor(name, amount) {
+    constructor(name, amount, token) {
         this.name = name;
         this.amount = amount;
         this.token = token;
