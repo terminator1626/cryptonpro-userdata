@@ -34,19 +34,36 @@ async function data(user_id, key) {
     }
 }
 ```
-- Generate deposit:
+- Generate FaucetPay deposit:
 ```javascript
 const { Deposit } = require("cryptonpro-userdata");
 
-deposit_create("USER_ID", "AMOUNT", "API_KEY");
+create_faucetpay_invoice("USER_ID", "AMOUNT", "API_KEY");
 
-async function deposit_create(user_id, amount, token) {
+async function create_faucetpay_invoice(user_id, amount, token) {
     const deposit = new Deposit(user_id, amount, token);
-    const depositDATA = await deposit.create();
+    const depositDATA = await deposit.create_faucetpay_invoice();
     if (detailsDATA) {
         const details = detailsDATA;
         console.log(details);
         console.log(details.message); // Link to FaucetPay payment gateway
+    } else {
+        console.log('Problem with API');
+    }
+}
+```
+- Generate instant deposit:
+```javascript
+const { Deposit } = require("cryptonpro-userdata");
+
+create_instant_deposit("USER_ID", "AMOUNT", "API_KEY");
+
+async function create_instant_deposit(user_id, amount, token) {
+    const deposit = new Deposit(user_id, amount, token);
+    const depositDATA = await deposit.create_instant_deposit();
+    if (detailsDATA) {
+        const details = detailsDATA;
+        console.log(details);
     } else {
         console.log('Problem with API');
     }
