@@ -1,6 +1,6 @@
 {
   "name": "cryptonpro-userdata",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Package for public data about a specific user",
   "main": "index.js",
   "keywords": [
