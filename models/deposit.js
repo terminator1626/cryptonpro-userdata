@@ -28,7 +28,7 @@ class Deposit {
     }
 
     async displayWithDetails() {
-        const details = await this.create();
+        const details = await this.create_faucetpay_invoice();
         if (details) {
             return details;
         } else {
